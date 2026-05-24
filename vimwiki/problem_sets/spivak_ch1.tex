@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage{amsmath}
+\title{Spivak Chapter 1 Problems}
+\begin{document}
+\maketitle
+
+\section{Problem 1}
+Prove the following:
+\begin{enumerate}
+    \item If $ax=a$ for some number $a \neq 0$, then $x = 1$.
+       
+        $ax = a$,
+
+        $a^{-1} \cdot ax = a^{-1} \cdot a$,
+
+        $(a^{-1} \cdot a) \cdot x = a^{-1} \cdot a$,
+
+        $1 \cdot x = 1$, therefore,
+
+        $x=1$.
+
+    \item $x^2 - y^2 = (x-y)(x+y)$.
+
+        $x^2 - y^2 = (x-y)(x+y)$,
+
+        $x^2 - y^2 = x(x+y) - y(x+y)$,
+
+        $x^2 - y^2 = x^2 + xy - xy - y^2$,
+
+        $x^2 - y^2 = x^2 - y^2$.
+
+    \item If $x^2 = y^2$, then $x = y$ or $x = -y$.
+        
+        $x^2 = y^2$,
+
+        $x \cdot y^{-1} = y \cdot x^{-1}$, thus,
+
+        $x = \pm y$.
+
+\end{enumerate}
+
+\section{Problem 5}
+Prove the following:
+\begin{enumerate}
+    \item If $a < b$ and $c <d$, then $a + c < b + d$.
+
+        $a < b$, $c <d$,
+
+        $a + c < b + c$, $b + c < b + d$, therefore,
+
+        $a + c < b + d$.
+
+    \item If $a < b$, then $-b < -a$.
+
+        $a - b < 0$,
+
+        $-(a - b) > 0$, thus,
+
+        $-b < -a$.
+
+    \item If $a < b$ and $c > d$, then $a - c < b - d$.
+
+        $a < b$, $c > d$,
+
+        $a - c < b - c$, $b - c < b - d$, therefore,
+
+        $a - c < b - d$.
+
+    \item If $a <b$ and $c > 0$, then $ac < bc$.
+
+        $b - a \in P$,
+
+        $c \cdot (b - a) \in P$,
+
+        $bc - ac \in P$, i.e.,
+
+        $ac < bc$.
+\end{enumerate}
+
+\section{Problem 6}
+\begin{enumerate}
+
+    \item Prove that if $0 \leq x < y$, then $x^n < y^n$.
+
+        Assume $x^k < y^k $. As given, for $k=1$ we have $0 \leq x < y$. For the case of $k+1$, we have $0 \leq x^{k+1}  < x \cdot y^k$ and, $0 \leq x \cdot y^k < y^{k+1}$. Thus, $0 \leq x^{k+1} < y^{k+1}$ for all $n$.
+
+    \item Prove that if $x < y$ and $n$ is odd, then $x^n < y^n$.
+
+        For $k=0$, $x^1 < y^1$, as given. For $x, y \geq 0$ $n$, as per problem 6(a), $x^n < y^n$. For negative $x$, $y$, we have $0 \geq y^n > x^n$. For negative $x$ and positive $y$, clearly $x < y$, and, since n is odd, $x^n < y^n$.
+
+\end{enumerate}
+
+\section{Problem 10}
+Express each of the following without absolute value signs, treating various cases separately when necessary.
+\begin{enumerate}
+
+    \item  $|a + b| - |b|$
+
+        \[
+        |a + b| - |b| =
+        \begin{cases}
+            a + b - b, & a + b > 0, b > 0 \\
+
+            a + b +b, & a + b > 0, b < 0 \\
+
+            -(a + b) - b, & a + b < 0, b > 0 \\
+
+            -(a + b) + b, & a + b < 0, b < 0
+
+        \end{cases}
+        \]
+
+    \item $|(|x| - 1)|$
+
+        \[
+        |(|x| - 1)| =
+        \begin{cases}
+            
+            x < -1, & -x - 1 \\
+
+            -1 \leq x < 0, & 1 + x \\
+
+            0 < x \leq 1, & 1-x \\
+
+            x \geq 1, & x - 1
+        \end{cases}
+    \]
+\end{enumerate}
+
+\section{Problem 11}
+Find all numbers $x$ for which
+\begin{enumerate}
+
+    \item $|x-3| = 8$.
+
+        $x = 11, -5$.
+
+    \item $|x-3| < 8$.
+
+        $-5 < x < 11$.
+
+    \item $|x + 4| < 2$.
+
+        $-6< x < -2$.
+
+    \item $|x-1| + |x-2| > 1$.
+
+        $x \in (- \infty, 1) \cup (2, \infty)$.
+
+\end{enumerate}
+\end{document}
+

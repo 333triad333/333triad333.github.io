@@ -1,0 +1,46 @@
+\documentclass{article}
+\title{Spivak Chapter 1 Problems}
+\begin{document}
+\maketitle
+
+\section{Problem 1}
+Prove the following:
+\begin{enumerate}
+    \item If $ax=a$ for some number $a \neq 0$, then $x = 1$.
+       
+        $ax = a$,
+
+        $a^{-1} \cdot ax = a^{-1} \cdot a$,
+
+        $(a^{-1} \cdot a) \cdot x = a^{-1} \cdot a$,
+
+        $1 \cdot x = 1$, therefore,
+
+        $x=1$.
+
+    \item $x^2 - y^2 = (x-y)(x+y)$.
+
+        $x^2 - y^2 = (x-y)(x+y)$,
+
+        $x^2 - y^2 = x(x+y) - y(x+y)$,
+
+        $x^2 - y^2 = x^2 + xy - xy - y^2$,
+
+        $x^2 - y^2 = x^2 - y^2$.
+
+    \item If $x^2 = y^2$, then $x = y or x = -y$.
+        
+        $x^2 = y^2$,
+
+        $x \cdot x = y \cdot y$,
+
+        $x^{-1} \cdot x \cdot x = x^{-1} \cdot y \cdot y$,
+
+        $1 \cdot x = x^{-1} \cdot y \cdot y$,
+
+        $x = x^{-1} \cdot y \cdot y$,
+
+\end{enumerate}
+\end{section}
+
+\end{document}

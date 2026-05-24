@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<script type="text/javascript" src="vimwiki/mathjax/tex-chtml.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<title>Integral Calculus</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<a href="index.html">Index</a>
+<hr>
+<div class="content">
+
+<div id="Integral Calculus"><h1 id="Integral Calculus" class="header"><a href="#Integral Calculus">Integral Calculus</a></h1></div>
+
+<div id="Integral Calculus-Method of Exhaustion"><h2 id="Method of Exhaustion" class="header"><a href="#Integral Calculus-Method of Exhaustion">Method of Exhaustion</a></h2></div>
+
+<p>
+The method of exhaustion is a technique invented in Ancient Greece to calculate areas of curvilinear plane figures by way of successive approximation, using a sequence of inscribed, or circumscribed, polygons. 
+</p>
+
+<p>
+Antiphon of Athens was the first to apply the method of exhaustion to the calculation of the area of a circle. His method was further developed by Bryson of Heraclea and, later, Eudoxus of Cnidus, the latter of whom formalized Antiphon and Bryson's method into a rigorous procedure. Euclid drew upon Eudoxus in book XII of the <em>Elements</em>, supplying proofs of the formulae for the volume of a sphere, cylinder, cone and tetrahedron. This technique prefigured the development of integral calculus in the 17th century. 
+</p>
+
+<p>
+<img src="images/real_analysis/1.png" />
+</p>
+
+<div id="Integral Calculus-Method of Exhaustion-Archimedes' Quadrature of the Parabola"><h3 id="Archimedes' Quadrature of the Parabola" class="header"><a href="#Integral Calculus-Method of Exhaustion-Archimedes' Quadrature of the Parabola">Archimedes' Quadrature of the Parabola</a></h3></div>
+
+<p>
+One of the most well-known applications of the method of exhaustion is due to Archimedes, who used the technique to calculate the area under a parabolic segment.
+</p>
+
+<p>
+Archimedes' proof can be outlined as follows:
+</p>
+
+<ol>
+<li>
+Build a sequence of inscribed polygons \(P_n\);
+
+<li>
+Sum the series \(P_n\) and show that sum of each successive \(P_{n+1}\) adds to \(\frac {1}{4}\) the area of the previous sum;
+
+<li>
+Show that \(P_n\) reduces to a geometric series that converges to the area of the figure;
+
+<li>
+Reducto ad absurdum: area must be exactly \(\frac{4}{3} P_1\), nothing else is possible.
+
+</ol>
+<p>
+See the following for a detailed derivation of the above result:
+</p>
+
+<ul>
+<li>
+<a href="../vimwiki/pdf/real_analysis/archimedes_quadrature.pdf">The Quadrature of the Parabola, Archimedes</a>
+
+<li>
+<a href="../vimwiki/pdf/real_analysis/exhaustion2.pdf">Archimedes' quadrature of the parabola and the method of exhaustion, John Abbott College</a>
+
+</ul>
+<div id="Integral Calculus-The Riemann Integral"><h2 id="The Riemann Integral" class="header"><a href="#Integral Calculus-The Riemann Integral">The Riemann Integral</a></h2></div>
+
+<p>
+The Riemann integral is defined in terms of lower and upper sums. Informally, these are approximations to an integral's value from above and from below. These sums are defined by partitioning an interval and multiplying through by successive minimums and maximums, respectively:
+</p>
+
+<p>
+$$L(f, P) =
+\sum_{i=1}^n m_i(t_i-t_{i-1})$$
+</p>
+
+<p>
+and
+</p>
+
+<p>
+$$U(f,P) =
+\sum_{i=1}^n M_i(t_i-t_{i-1}).$$
+</p>
+
+<p>
+where \(P\) is a partition of the interval and
+</p>
+
+<p>
+\(m_k = \inf\{f(x): x \in [x_{k-1}, x_k]\}; M_k = \sup\{f(x): x \in [x_{k-1}, x_k]\}.\)
+</p>
+
+<p>
+It is clear that \(L(f,P) \leq U(f,P)\) for the same \(P\), but for different partitions \(P, Q\) this is not obvious. If \(Q\) is a <em>refinement</em> of a partition \(P\), it contains every point of \(P\). Adding a point \(z\) to the subinterval \([x_{k-1},x_k]\), we have:
+</p>
+
+<p>
+\(m'_k = \inf\{f(x):x \in [z,x_k]\},\)
+</p>
+
+<p>
+\(m''_k = \inf\{f(x):x \in [x_{k-1},z]\}.\)
+</p>
+
+<p>
+Then \(m_k \leq m'_k, m_k \leq m''_k\), due to the fact that the new subinterval is a smaller set and its infimum cannot be less than the infimum over the original, larger interval. The contribution of the new interval to the lower sum can only increase, so refinement can only increase lower sums:
+</p>
+
+<p>
+\(m_k(x_k-x_{k-1}) = m_k(x_k - z) + m_k(z-x_{k-1}) \leq m'_k(x_k-z) + m''_k(z-x_{k-1}).\)
+</p>
+
+<p>
+<img src="images/real_analysis/refinement.gif" />
+</p>
+
+<p>
+Similarly, refinement decreases upper sums. Then, we have that
+</p>
+
+<p>
+\(L(f,P_1) \leq L(f,Q) \leq U(f,Q) \leq U(f,P_2).\)
+</p>
+
+<p>
+<em>Sources consulted:</em>
+</p>
+
+<ul>
+<li>
+Tom M. Apostol, <em>Calculus, Volume 1</em>
+
+<li>
+Stephen Abbott, <em>Understanding Analysis</em>
+
+<li>
+Archimedes; Sir Thomas Little Heath, <em>The Works of Archimedes</em>
+
+<li>
+John Abbott College, <em>Archimedes' quadrature of the parabola and the method of exhaustion</em>
+
+<li>
+Jose N Contreras, <em>A Brief History of the Method of Exhaustion with an Illustration</em>
+
+<li>
+Wikipedia, <em>Method of exhaustion</em>
+
+</ul>
+<p>
+<em>Graphics created in SageMath.</em>
+</p>
+
+</div>
+</body>
+</html>

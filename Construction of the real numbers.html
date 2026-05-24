@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<script type="text/javascript" src="vimwiki/mathjax/tex-chtml.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<title>Construction of the real numbers</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<a href="index.html">Index</a>
+<hr>
+<div class="content">
+
+<div id="Construction of the Real Numbers"><h1 id="Construction of the Real Numbers" class="header"><a href="#Construction of the Real Numbers">Construction of the Real Numbers</a></h1></div>
+
+<p>
+In order to meaningfully discuss concepts such as convergence, we need a definition of the real numbers. The naturals, integers and rationals are insufficient for our purposes, due to the fact that there are gaps where we would want certain values to exist. The real numbers can be "built" by extending outwards from the natural numbers, through the integers, rational numbers, and, finally, the irrational numbers. In this way, the reals inherit familiar properties and behavior from the naturals that we would want and expect them to have. Namely, this means that the set of reals should satisfy the field and order axioms.
+</p>
+
+<div id="Construction of the Real Numbers-The Natural Numbers"><h2 id="The Natural Numbers" class="header"><a href="#Construction of the Real Numbers-The Natural Numbers">The Natural Numbers</a></h2></div>
+
+<p>
+We begin by defining the natural numbers. The natural numbers are the set \( N \) of all numbers that satisfy the following five axioms:
+</p>
+
+<div id="Construction of the Real Numbers-The Natural Numbers-_Peano Axioms._"><h4 id="_Peano Axioms._" class="header"><a href="#Construction of the Real Numbers-The Natural Numbers-_Peano Axioms._"><em>Peano Axioms.</em></a></h4></div>
+<ol>
+<li>
+1 is a natural number;
+
+<li>
+<em>Closure.</em> If \(x\) is a natural number, then there is a unique number \(S(x)\), called the successor of \(x\), that is also a natural number;
+
+<li>
+\(S(x) \neq 1\);
+
+<li>
+If \(S(x) = S(y)\), then \(x = y\);
+
+<li>
+<em>Axiom of Induction.</em> If some property \(P\) holds for \(x\), and \(P\) also holds for \(S(x)\), then \(P\) holds for all \(x\) in \(N\).
+
+</ol>
+<div id="Construction of the Real Numbers-The Natural Numbers-_Addition._"><h4 id="_Addition._" class="header"><a href="#Construction of the Real Numbers-The Natural Numbers-_Addition._"><em>Addition.</em></a></h4></div>
+
+<p>
+From the Peano axioms, we can continue on to develop addition, easily suggested by this foundation. For this, we will need the following theorems:
+</p>
+
+<ol>
+<li>
+If \(x \neq y\), then \(S(x) \neq S(y)\).
+
+<li>
+\(S(x) \neq x\).
+
+<li>
+If \(x \neq 1\), then there exists one (and only one) u such that \(x = S(u)\).
+
+</ol>
+<p>
+Addition can then be defined as follows:
+</p>
+
+<p>
+For every \((x, y)\) in \(N\), there is exactly one number \(x+y\) such that
+</p>
+<ol>
+<li>
+\(x+1 = S(x)\), for each \(x\);
+
+<li>
+\(x+S(y) = S(x+y)\), for each \(x, y\).
+
+</ol>
+<p>
+We will now verify that a unique definition is possible by induction.
+</p>
+
+<p>
+Let \(M\) be the set for which \(x+y\) is defined for all \(y\) such that
+</p>
+
+<ul>
+<li>
+\(x+1=S(x)\);
+
+<li>
+\(x+S(y)=S(x+y)\).
+
+</ul>
+<p>
+Because \(x+1 = S(x)\), \(x+S(y)=(S(S(y))=S(x+y)\). Then,
+</p>
+
+<ul>
+<li>
+\(S(x) + 1 = S(x+1) = S(S(x))\),
+
+<li>
+\(S(x) + S(y) = S(S(x) + S(y)) = S(S(x+y)) = S(S(x) + y))\).
+
+</ul>
+<p>
+Thus, \(1 \in M\).
+</p>
+
+<p>
+<img src="images/real_analysis/addition.png" />
+</p>
+
+<p>
+Assume \(x \in M\). Then,
+</p>
+
+<ul>
+<li>
+\(S(x) + y = S(x+y)\),
+
+<li>
+\(S(x) + S(y) = S((x + S(y))) = S((S(x+y)) = S(S(x) + y)).\)
+
+</ul>
+<p>
+Thus \(S(x) \in M\).
+</p>
+
+<p>
+Addition is associative:
+</p>
+
+<ol>
+<li>
+\((x+y) + z = x + (y+z)\).
+
+</ol>
+<p>
+Commutative:
+</p>
+
+<ol>
+<li>
+\(x+y = y+x\).
+
+</ol>
+<p>
+Finally,
+</p>
+
+<ol>
+<li>
+\(y \neq x+y\);
+
+<li>
+If \(y \neq z\), then \(x+y \neq x+z\);
+
+<li>
+Either \(x=y\), there is exactly one \(a\) such that \(x=y+a\), or there is exactly one \(b\) such that \(y=x+b\).
+
+</ol>
+<p>
+The above theorems can be proven by induction. For details, see Landau.
+</p>
+
+<div id="Construction of the Real Numbers-The Natural Numbers-_Order._"><h4 id="_Order._" class="header"><a href="#Construction of the Real Numbers-The Natural Numbers-_Order._"><em>Order.</em></a></h4></div>
+
+<p>
+An ordering is a binary relation on a set \(S\) that formalizes the notion of comparison. The natural numbers are equipped with a strict ordering, \(\leq\). 
+</p>
+
+<ul>
+<li>
+If \(x = y+a\), we write \(x &gt; y\).
+
+<li>
+If \(y = x+b\), we write \(x &lt; y\).
+
+<li>
+For any \(x\), \(y\), either \(x=y\), \(x&gt;y\), or \(x&lt;y\).
+
+</ul>
+<p>
+Further properties:
+</p>
+
+<ol>
+<li>
+<em>Transitivity.</em> If \(x &lt; y\), \(y &lt; z\), then \(x &lt; z\).
+
+<li>
+<em>Well-ordering.</em> Every subset of \(N\) has a least element.
+
+</ol>
+<div id="Construction of the Real Numbers-The Natural Numbers-_Multiplication._"><h4 id="_Multiplication._" class="header"><a href="#Construction of the Real Numbers-The Natural Numbers-_Multiplication._"><em>Multiplication.</em></a></h4></div>
+
+<p>
+For every pair \(x\), \(y\), there is a unique \(x \times y\) such that
+</p>
+
+<ol>
+<li>
+\(x \times 1 = x\), for every \(x\);
+
+<li>
+\(x \times S(y) = x \times y + x\), for every \(x, y\).
+
+</ol>
+<p>
+The proof of the uniqueness and possibility of the above definition is analogous to the technique used to demonstrate these properties in the case of addition. For details, see Landau.
+</p>
+
+<p>
+Multiplication is commutative:
+</p>
+
+<ul>
+<li>
+\(xy=yx\).
+
+</ul>
+<p>
+Distributive:
+</p>
+
+<ul>
+<li>
+\(x(y+z) = xy+xz\).
+
+</ul>
+<p>
+Associative:
+</p>
+
+<ul>
+<li>
+\((xy)z = x(yz)\).
+
+</ul>
+<p>
+Finally, if \(x &gt; y\), \(x = y\) or \(x &lt; y\), then \(xz &gt; yz\), \(xz=yz\), or \(xz&lt;yz\).
+</p>
+
+<div id="Construction of the Real Numbers-The Rational Numbers"><h2 id="The Rational Numbers" class="header"><a href="#Construction of the Real Numbers-The Rational Numbers">The Rational Numbers</a></h2></div>
+
+<p>
+A fraction \(\frac{x_1}{x_2}\) can be defined as an ordered pair of two natural numbers \(x_1\), \(x_2\). We say that a fraction \(\frac{x_1}{x_2}\) is equivalent to another fracton \(\frac{y_1}{y_2}\) if \(x_1 y_2 = y_1 x_2\). We write this as \(\frac{x_1}{x_2} \sim \frac{y_1}{y_2}\). The set of all fractions \(\frac{x_1}{x_2} \sim \frac{y_1}{y_2}\) forms an equivalence class; we call these classes rational numbers.
+</p>
+
+<p>
+The equivalence relation is transitive:
+</p>
+
+<p>
+If \(\frac{x_1}{x_2} \sim \frac{y_1}{y_2}, \frac{y_1}{y_2} \sim \frac{z_1}{z_2}\), then \(\frac{x_1}{x_2} \sim \frac{z_1}{z_2}\).
+</p>
+
+<p>
+To prove this, set \(x_1 y_2 = y_1 x_2\), \(y_1 z_2 = z_1 y_2\). Then,
+</p>
+
+<ul>
+<li>
+\((x_1 y_2)(y_1 z_2) = (y_1 x_2)(z_1 y_2)\).
+
+</ul>
+<p>
+<img src="images/real_analysis/gif.gif" />
+</p>
+
+<p>
+Because
+</p>
+
+<ul>
+<li>
+\((x y)(z u) = x(y(zu)) = x((yz)u) = x(u(yz)) = (xu)(yz) = (xu)(zy)\),
+
+</ul>
+<p>
+we have
+</p>
+
+<ul>
+<li>
+\((x_1 y_2)(y_1 z_2) = (x_1 z_2)(y_1 y_2)\)
+
+</ul>
+<p>
+and
+</p>
+
+<ul>
+<li>
+\((y_1 x_2)(x_1 y_2) = (y_1 y_2)(z_1 x_2) = (z_1 x_2)(y_1 y_2)\),
+
+</ul>
+<p>
+then,
+</p>
+
+<ul>
+<li>
+\((x_1 z_2)(y_1 y_2) = (z_1x_2)(y_1 y_2)\),
+
+<li>
+\(x_1 z_2 = z_1 x_2\).
+
+</ul>
+<div id="Construction of the Real Numbers-The Rational Numbers-_Order._"><h4 id="_Order._" class="header"><a href="#Construction of the Real Numbers-The Rational Numbers-_Order._"><em>Order.</em></a></h4></div>
+
+<p>
+We say that \(\frac{x_1}{x_2} &lt; \frac{y_1}{y_2}\) if \(x_1 y_2 &lt; y_1 x_2\). Similarly, \(\frac{x_1}{x_2} &gt; \frac{y_1}{y_2}\) if \(x_1 y_2 &gt; y_1 x_2\).
+</p>
+
+<p>
+Either
+</p>
+
+<ul>
+<li>
+\(\frac{x_1}{x_2} \sim \frac{y_1}{y_2}\),
+
+<li>
+\(\frac{x_1}{x_2} &lt; \frac{y_1}{y_2}\), or
+
+<li>
+\(\frac{x_1}{x_2} &gt; \frac{y_1}{y_2}\).
+
+</ul>
+<p>
+As is true for the naturals, the order relation is transitive: if \(\frac{x_1}{x_2} &lt; \frac{y_1}{y_2}\), \(\frac{y_1}{y_2} &lt; \frac{z_1}{z_2}\), then \(\frac{x_1}{x_2} &lt; \frac{z_1}{z_2}\).
+</p>
+
+<p>
+For every given \(\frac{x_1}{x_2}\), there exists a \(\frac{z_1}{z_2} &lt; \frac{x_1}{x_2}\). Similarly, there exists a \(\frac{z_1}{z_2} &gt; \frac{x_1}{x_2}\). Finally, if \(\frac{x_1}{x_2} &lt; \frac{y_1}{y_2}\), there exists a \(\frac{z_1}{z_2}\) such that \(\frac{x_1}{x_2} &lt; \frac{z_1}{z_2} &lt; \frac{y_1}{y_2}\).
+</p>
+
+<div id="Construction of the Real Numbers-The Rational Numbers-_Addition._"><h4 id="_Addition._" class="header"><a href="#Construction of the Real Numbers-The Rational Numbers-_Addition._"><em>Addition.</em></a></h4></div>
+
+<p>
+The sum \(\frac{x_1}{x_2} + \frac{y_1}{y_2}\) is defined to mean the fraction \(\frac{x_1 y_2 + y_1 x_2}{x_2 y_2}\).
+</p>
+
+<p>
+The equivalence class of the sum of two fractions is determined by the equivalance classes of the summands; if
+</p>
+
+<ul>
+<li>
+\(\frac{x_1}{x_2} \sim \frac{y_1}{y_2}\), \(\frac{z_1}{z_2} \sim \frac{u_1}{u_2}\),
+
+</ul>
+<p>
+we have
+</p>
+
+<ul>
+<li>
+\(\frac{x_1}{x_2} + \frac{z_1}{z_2} \sim \frac{y_1}{y_2} + \frac{u_1}{u_2}\).
+
+</ul>
+<p>
+Addition is commutative:
+</p>
+
+<ul>
+<li>
+\(\frac{x_1}{x_2} + \frac{y_1}{y_2} \sim \frac{y_1}{y_2} + \frac{x_1}{x_2}\).
+
+</ul>
+<p>
+Associative:
+</p>
+
+<ul>
+<li>
+\(\frac{x_1}{x_2} + \frac{y_1}{y_2} \sim \frac{y_1}{y_2} + \frac{x_1}{x_2}\).
+
+</ul>
+<p>
+Finally, if \(\frac{x_1}{x_2} &gt; \frac{y_1}{y_2}\), then the statement \(\frac{y_1}{y_2} + \frac{u_1}{u_2} \sim \frac{x_1}{x_2}\) has a solution \(\frac{u_1}{u_2}\). All solutions belong to the same equivalence class.
+</p>
+
+<div id="Construction of the Real Numbers-The Rational Numbers-_Multiplication._"><h4 id="_Multiplication._" class="header"><a href="#Construction of the Real Numbers-The Rational Numbers-_Multiplication._"><em>Multiplication.</em></a></h4></div>
+
+<p>
+The product \(\frac{x_1}{x_2} \frac{y_1}{y_2}\) is defined as the fraction \(\frac{x_1 y_1}{x_2 y_2}\).
+</p>
+
+<p>
+As with addition, the equivalence class of the product depends upon the equivalence class of its factors.
+</p>
+
+<p>
+Multiplication is commutative:
+</p>
+
+<ul>
+<li>
+\(\frac{x_1}{x_2} \frac{y_1}{y_2} \sim \frac{y_1}{y_2} \frac{x_1}{x_2}\).
+
+</ul>
+<p>
+Associative:
+</p>
+
+<ul>
+<li>
+\((\frac{x_1}{x_2} \frac{y_1}{y_2}) \frac{z_1}{z_2} \sim \frac{x_1}{x_2} (\frac{y_1}{y_2} \frac{z_1}{z_2})\). 
+
+</ul>
+<p>
+Distributive:
+</p>
+
+<ul>
+<li>
+\(\frac{x_1}{x_2} (\frac{y_1}{y_2} + \frac{z_1}{z_2}) \sim \frac{x_1}{x_2} \frac{y_1}{y_2} + \frac{x_1}{x_2} \frac{z_1}{z_2}\).
+
+</ul>
+<p>
+Finally, the statement \(\frac{y_1}{y_2} \frac{u_1}{u_2} \sim \frac{x_1}{x_2}\) has a solution \(\frac{u_1}{u_2}\). All solutions belong to the same equivalence class.
+</p>
+
+<div id="Construction of the Real Numbers-The Rational Numbers-_Properties of Rational Numbers._"><h4 id="_Properties of Rational Numbers._" class="header"><a href="#Construction of the Real Numbers-The Rational Numbers-_Properties of Rational Numbers._"><em>Properties of Rational Numbers.</em></a></h4></div>
+
+<p>
+For equivalence classes (rational numbers) \(X\), \(Y\), the field and order axioms hold as outlined above.
+</p>
+
+<div id="Construction of the Real Numbers-The Rational Numbers-_Integers._"><h4 id="_Integers._" class="header"><a href="#Construction of the Real Numbers-The Rational Numbers-_Integers._"><em>Integers.</em></a></h4></div>
+
+<p>
+An <em>integer</em> is a rational number of the form \(\frac{x}{1}\). The set of integers is closed under addition and multiplication, and satisfy the field and order axioms.
+</p>
+
+<div id="Construction of the Real Numbers-Dedekind Cuts"><h2 id="Dedekind Cuts" class="header"><a href="#Construction of the Real Numbers-Dedekind Cuts">Dedekind Cuts</a></h2></div>
+
+<p>
+A set of rational numbers \(X\) is called a <em>cut</em> if:
+</p>
+
+<ul>
+<li>
+\(A \neq \emptyset\), \(X \neq \mathbb{Q}\);
+
+<li>
+If \(a \in X\), every number \(b &lt; a\) also belongs to \(X\);
+
+<li>
+The set \(X\) has no greatest element.
+
+</ul>
+<p>
+We partition the set of rationals into two classes, the set \(X\), and the set \(Y\) which contains every number not in \(X\).
+</p>
+
+<p>
+We write \(X &lt; Y\) if there is an \(a \in Y\) such that \(a \notin X\).
+</p>
+
+<p>
+For every \(X\), \(Y\), either \(X = Y\), \(X &lt; Y\) or \(Y &lt; X\). Ordering is transitive.
+</p>
+
+<div id="Construction of the Real Numbers-Dedekind Cuts-_Addition._"><h4 id="_Addition._" class="header"><a href="#Construction of the Real Numbers-Dedekind Cuts-_Addition._"><em>Addition.</em></a></h4></div>
+
+<p>
+The sum of two cuts is also a cut (closure). This can be proven by induction; for details, see Landau.
+</p>
+
+<p>
+Addition is commutative and associative.
+</p>
+
+<p>
+For any given cut \(X\), there exists a \(Y\), \(Z\); \(Y &lt; Z\) such that \(Z-Y = X\).
+</p>
+
+<p>
+Given the equation \(Y+Z=X\), there exists exactly one solution \(Z\). The solution \(Z\) is known as the <em>difference</em> of \(X\), \(Y\), also written \(X-Y\).
+</p>
+
+<div id="Construction of the Real Numbers-Dedekind Cuts-_Multiplication._"><h4 id="_Multiplication._" class="header"><a href="#Construction of the Real Numbers-Dedekind Cuts-_Multiplication._"><em>Multiplication.</em></a></h4></div>
+
+<p>
+The set of all cuts is closed under multiplication. Multiplication is commutative and associative. The distributive law holds. Additive and multiplicative identities can be defined to function as expected.
+</p>
+
+<p>
+Given the equation \(XY=Z\), there exists exactly one solution \(Y\). The solution \(Y\) is known as the <em>quotient</em> of \(Z, X\), also written \(\frac{Z}{X}\).
+</p>
+
+<div id="Construction of the Real Numbers-Dedekind Cuts-_The Existence of Irrational Numbers._"><h4 id="_The Existence of Irrational Numbers._" class="header"><a href="#Construction of the Real Numbers-Dedekind Cuts-_The Existence of Irrational Numbers._"><em>The Existence of Irrational Numbers.</em></a></h4></div>
+
+<p>
+Rational numbers are cuts for which the supremum exists; this value is the cut. Because each cut is unique, the product of a cut with itself is also unique.
+</p>
+
+<p>
+Further, Pythagoras proved, in the sixth century, that there is no rational number whose square is two. To see this, assume there are integers \(p\), \(q\) such that \((\frac{p}{q})^2 = 2\). This implies that \(p^2 = 2q^2\). Then, \(p^2\) must be even, and \(p\) must itself be even, because the square of an odd number is also odd. We can then write \(p = 2r\), \(r\) also being an integer. Substituting \(p\) for \(2r\), we have \(2r^2 = q^2\). Then \(q^2\) must be even, implying that \(q\) is also even. But now we have shown that \(p\) and \(q\) are both even, though we assumed there was no common factor.
+</p>
+
+<p>
+Hence, \(2\) can not be expressed as the square of a rational number. The guarantee of the existence of a unique square, combined with this demonstration by Pythagoras, demonstrates the existence of irrational numbers.
+</p>
+
+<div id="Construction of the Real Numbers-The Real Numbers"><h2 id="The Real Numbers" class="header"><a href="#Construction of the Real Numbers-The Real Numbers">The Real Numbers</a></h2></div>
+
+<p>
+Real numbers can be represented as Dedekind cuts: a real number is identified as the lowest number that is greater than every other number in the cut, i.e., the supremum of the set of lower numbers it describes. The real number system consists of the positive reals, the number 0, and the negative reals.
+</p>
+
+<div id="Construction of the Real Numbers-The Real Numbers-_Ordering._"><h4 id="_Ordering._" class="header"><a href="#Construction of the Real Numbers-The Real Numbers-_Ordering._"><em>Ordering.</em></a></h4></div>
+
+<p>
+The <em>absolute value</em> is defined as:
+</p>
+
+<p>
+$$
+\left| x\right| = \begin{cases}
+a &amp; x = a, \\
+0 &amp; x = 0, \\
+a &amp; x = -a.
+\end{cases}
+$$
+</p>
+
+<p>
+If \(x\) and \(y\) do not share the same sign, then \(x &lt; y\) if and only if:
+</p>
+
+<ol>
+<li>
+\(x\) is negative, \(y\) is negative, \(|x| &lt; |y|\), or
+
+<li>
+\(x = 0\), \(y\) is negative, or
+
+<li>
+\(x\) is positive, \(y\) is negative, or
+
+<li>
+\(x\) is positive, \(y = 0\).
+
+</ol>
+<p>
+We define \(x &gt; y\) to mean that \(y &lt; x\). Then, we have that either \(x = y\), \(x &lt; y\), or \(x &gt; y\), which we have already known for positive numbers, and can be proven by enumerating each possible case for \(x, y\) being negative, positive or \(0\); see Landau. Ordering is transitive.
+</p>
+
+<p>
+If \(x \leq 0\), \(x\) is rational if either
+</p>
+
+<ul>
+<li>
+\(x = 0\), or
+
+<li>
+\(x &lt; 0\), \(|x|\) is a rational number.
+
+</ul>
+<p>
+Thus, we have negative rational numbers. If \(x &lt; 0\) and is not rational, it is irrational. So, we now have negative irrational numbers.
+</p>
+
+<p>
+If \(x &lt; 0\) then \(x\) is an integer if
+</p>
+
+<ul>
+<li>
+\(x = 0\), or
+
+<li>
+\(x &lt; 0\), \(|x|\) is an integer.
+
+</ul>
+<div id="Construction of the Real Numbers-The Real Numbers-_Addition._"><h4 id="_Addition._" class="header"><a href="#Construction of the Real Numbers-The Real Numbers-_Addition._"><em>Addition.</em></a></h4></div>
+
+<p>
+We can define addition piecewise now that we have defined absolute value:
+</p>
+
+<ul>
+<li>
+if \(x &lt; 0\), \(y &lt; 0\):
+
+<ul>
+<li>
+$ - (|x| + |y|);
+
+</ul>
+<li>
+if \(x &gt; 0\), \(y &lt; 0\):
+
+<ul>
+<li>
+\(|x| - |y|\) if \(|x| &gt; |y|\);
+
+<li>
+\(0\) if \(|x| = |y|\);
+
+<li>
+\( - (|x| - |y|)\) if \(|x| &lt; |y|\);
+
+</ul>
+<li>
+if \(x &lt; 0\), \(y &gt; 0\):
+
+<ul>
+<li>
+\(x + y\);
+
+</ul>
+<li>
+if \(x = 0\):
+
+<ul>
+<li>
+\(y\);
+
+</ul>
+<li>
+if \(y = 0\):
+
+<ul>
+<li>
+\(x\).
+
+</ul>
+</ul>
+<p>
+Addition defined on the reals satisfies the field axioms.
+</p>
+
+<div id="Construction of the Real Numbers-The Real Numbers-_Multiplication._"><h4 id="_Multiplication._" class="header"><a href="#Construction of the Real Numbers-The Real Numbers-_Multiplication._"><em>Multiplication.</em></a></h4></div>
+
+<p>
+Multiplication can, likewise, be defined by delineating particular cases:
+</p>
+
+<p>
+$$
+x \times y =\begin{cases}
+-(|x||y|) &amp; x &gt; 0, y &lt; 0 \space or \space x &lt; 0, y &gt; 0; \\
+|x||y| &amp; x &lt; 0, y &lt; 0; \\
+0 &amp; x = 0 \space or \space y = 0.
+\end{cases}
+$$
+</p>
+
+<p>
+Multiplication is commutative, associative and distributive over addition.
+</p>
+
+<div id="Construction of the Real Numbers-Dedekind's Fundamental Theorem"><h2 id="Dedekind's Fundamental Theorem" class="header"><a href="#Construction of the Real Numbers-Dedekind's Fundamental Theorem">Dedekind's Fundamental Theorem</a></h2></div>
+
+<p>
+Given any division of the set of real numbers \(R\) into two classes such that
+</p>
+
+<ol>
+<li>
+There is a number in the first class, and a number in the second class;
+
+<li>
+Every number of the first class is less than every number of the second class,
+
+</ol>
+<p>
+there is exactly one number \(x\) such that every \(x &lt; y\) belongs to the first class and every \(x &gt; y\) belongs to the second.
+</p>
+
+<p>
+<em>Sources consulted:</em>
+</p>
+<ul>
+<li>
+Edmund Landau, <em>Foundations of Analysis</em>
+
+<li>
+Walter Rudin, <em>Principles of Mathematical Analysis</em>
+
+<li>
+Stephen Abbott, <em>Understanding Analysis</em>
+
+<li>
+Wikipedia, <em>Peano axioms</em>
+
+<li>
+Wikipedia, <em>Construction of the real numbers</em>
+
+<li>
+Wikipedia, <em>Natural numbers</em>
+
+<li>
+Wikipeida, <em>Dedekind cut</em>
+
+</ul>
+<p>
+<em>Graphics created in SageMath.</em>
+</p>
+
+</div>
+</body>
+</html>
